@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const FlexDirectionBasics = () => {
-  const [flexDirection, setflexDirection] = useState('column');
+  const [flexDirection, setflexDirection] = useState('row');
 
   return (
     <PreviewLayout
@@ -26,7 +26,8 @@ const PreviewLayout = ({
 }) => (
   <View style={{padding: 10, flex: 1}}>
     <Text style={styles.label}>{label}</Text>
-    <Text>Set column please</Text>
+    <Text></Text>
+    <Text></Text>
     <View style={styles.row}>
       {values.map(value => (
         <TouchableOpacity
@@ -56,18 +57,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'aliceblue',
   },
   box: {
-    width: 70,
-    height: 90,
-    opacity:1,
+    width: 60,
+    height: 80,
+    opacity:0.5,
   },
   row: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     flexWrap: 'wrap',
   },
   button: {
     paddingHorizontal: 8,
     paddingVertical: 6,
-    borderRadius: 4,
+    borderRadius: 6,
     backgroundColor: 'oldlace',
     alignSelf: 'flex-start',
     marginHorizontal: '1%',
@@ -76,21 +77,23 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   selected: {
-    backgroundColor: 'coral',
-    borderWidth: 0,
+    backgroundColor: 'green',
+    borderWidth: 1,
+    // borderTopRightRadius: 2,
   },
   buttonLabel: {
-    fontSize: 12,
+    fontSize: 16,
     fontWeight: '500',
-    color: 'coral',
+    color: 'green',
   },
   selectedLabel: {
     color: 'white',
   },
   label: {
+    color: "green",
     textAlign: 'center',
     marginBottom: 10,
-    fontSize: 24,
+    fontSize: 48,
   },
 });
 
